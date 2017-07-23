@@ -11,7 +11,7 @@ RUN apt-get update -y
 RUN apt-get install -y \
     ansible
 
-ENV WORK_DIR /playbook
+ENV WORK_DIR /project
 
 RUN mkdir ${WORK_DIR}
 
