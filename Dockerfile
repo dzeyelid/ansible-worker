@@ -9,7 +9,8 @@ RUN apt-add-repository ppa:ansible/ansible
 RUN apt-get update -y
 
 RUN apt-get install -y \
-    ansible
+    ansible \
+    git
 
 ENV WORK_DIR /project
 
