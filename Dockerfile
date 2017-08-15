@@ -13,8 +13,14 @@ RUN apt-get install -y \
     git
 
 ENV WORK_DIR /project
+ENV WORK_USER ansible
 
-RUN mkdir ${WORK_DIR}
+RUN useradd -m -U ${WORK_USER}
+
+RUN mkdir ${WORK_DIR} && \
+    chown -R ${WORK_USER}:${WORK_USER} ${WORK_DIR}
+
+USER ansible:ansible
 
 WORKDIR ${WORK_DIR}
 
